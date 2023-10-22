@@ -1,0 +1,22 @@
+SELECT FirstName
+FROM chinook.customers 
+WHERE Country != "USA";
+
+SELECT * 
+FROM chinook.customers 
+WHERE Country = "Brazil";
+
+SELECT * 
+FROM chinook.Employees
+WHERE Title = "Sales Support Agent";
+
+SELECT SUM(Total)
+FROM chinook.Invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+SELECT emp.FirstName, emp.LastName,
+ROUND(SUM(Inv.Total), 2) as 'Total Sales' 
+FROM chinook.Employees emp
+
+JOIN chinook.Customers cust 
+ON cust.SupportRepId = emp.EmployeeId
