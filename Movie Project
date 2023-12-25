@@ -1,0 +1,34 @@
+#Movie project using Codecademy 
+
+#Part 1 using AND
+SELECT *
+FROM movies
+WHERE year < 1985
+   AND genre = 'horror';
+
+#Part 2 using OR
+SELECT *
+FROM movies
+WHERE year > 2014
+   OR genre = 'romance';
+   OR genre = 'comedy';
+
+#Part 3 using ORDER BY
+SELECT name, year, imdb_rating
+FROM movies
+ORDER BY imdb_rating DESC;
+
+#Part 4 using LIMIT
+SELECT *
+FROM movies
+ORDER BY imdb_rating DESC
+LIMIT 3;
+
+#Part 5 using CASE
+SELECT name,
+ CASE
+  WHEN genre = 'romance' THEN 'Chill'
+  WHEN genre = 'comedy'  THEN 'Chill'
+  ELSE 'Intense'
+ END AS 'Mood'
+FROM movies;
